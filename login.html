@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(#141e30, #243b55);
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .login-box {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 100px 40px;
+            width: 500px; /* Increased width to 500px */
+            border-radius: 10px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+            color: #fff;
+            text-align: center;
+        }
+
+        .login-box h2 {
+            margin-bottom: 30px;
+        }
+
+        .toggle-box {
+            margin-bottom: 20px;
+        }
+        .toggle-box label {
+            margin-right: 10px;
+            cursor: pointer;
+            color: #03e9f4;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        .toggle-box label:hover {
+            color: #fff;
+        }
+        .toggle-box input {
+            display: none;
+        }
+        .slider {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            background-color: #ccc;
+            border-radius: 34px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+        input:checked+.slider {
+            background-color: #03e9f4;
+        }
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+        .user-box {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        .user-box input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            border: none;
+            border-bottom: 1px solid #fff;
+            background: transparent;
+            outline: none;
+        }
+        .user-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            pointer-events: none;
+            transition: .5s;
+        }
+        .user-box input:focus~label,
+        .user-box input:valid~label {
+            top: -20px;
+            color: #03e9f4;
+            font-size: 12px;
+        }
+        .login-box button {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            background: #03e9f4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .login-box button:before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+        }
+        .login-box button:hover:before {
+            width: 400%;
+            height: 400%;
+        }
+        .login-box button:hover {
+            background: #05b1e8;
+        }
+        .login-box button:hover {
+            background: #03e9f4;
+            color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="toggle-box">
+                <label for="loginTypeToggle">Login as a Mentee</label>
+                <label class="slider">
+                    <input type="checkbox" id="loginTypeToggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <form id="mentorLoginForm" class="input-group">
+                <h2>Mentor Login</h2>
+                <div class="user-box">
+                    <input type="text" class="input-field" placeholder="Username" required>
+                    <label>Username</label>
+                </div>
+                <div class="user-box">
+                    <input type="password" class="input-field" placeholder="Password" required>
+                    <label>Password</label>
+                </div>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+            <form id="menteeLoginForm" class="input-group" style="display:none;">
+                <h2>Mentee Login</h2>
+                <div class="user-box">
+                    <input type="text" class="input-field" placeholder="Username" required>
+                    <label>Username</label>
+                </div>
+                <div class="user-box">
+                    <input type="password" class="input-field" placeholder="Password" required>
+                    <label>Password</label>
+                </div>
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const loginTypeToggle = document.getElementById('loginTypeToggle');
+        const mentorLoginForm = document.getElementById('mentorLoginForm');
+        const menteeLoginForm = document.getElementById('menteeLoginForm');
+        loginTypeToggle.addEventListener('change', () => {
+            if (loginTypeToggle.checked) {
+                mentorLoginForm.style.display = 'none';
+                menteeLoginForm.style.display = 'block';
+            } else {
+                mentorLoginForm.style.display = 'block';
+                menteeLoginForm.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

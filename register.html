@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+html,body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#141e30, #243b55);
+    color: #fff;
+}
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100% - 60px); 
+}
+.login-box {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-align: center;
+}
+.login-box h2 {
+    margin-bottom: 30px;
+}
+
+.toggle-box {
+    margin-bottom: 20px;
+}
+
+.toggle-box label {
+    margin-right: 10px;
+    cursor: pointer;
+    color: #03e9f4;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    display: inline-block; /* Add this line */
+}
+
+.toggle-box label:hover {
+    color: #fff;
+}
+.toggle-box input[type="checkbox"] {
+    display: none;
+}
+.slider {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    background-color: #ccc;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+input:checked + .slider {
+    background-color: #03e9f4;
+}
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+.login-box {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    font-size: 18px;
+}
+h2 {
+    margin-bottom: 20px;
+}
+.user-box {
+    margin-bottom: 30px;
+    position: relative;
+}
+.user-box input,
+.user-box select,
+.user-box textarea {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #fbfafa;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+}
+.user-box textarea {
+    height: 120px; 
+    margin-top: 20px; 
+}
+.user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px 0; 
+    font-size: 18px; 
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.user-box select {
+    color: #afabab; 
+    border-bottom: 1px solid #fff; 
+    outline: none; 
+    padding: 5px; 
+    border-radius: 5px; 
+}
+.user-box select option:checked {
+    color: #fff; 
+    background-color: #c9cbcb; 
+}
+.user-box input:focus ~ label,
+.user-box input:valid ~ label,
+.user-box select:focus ~ label,
+.user-box select:valid ~ label,
+.user-box textarea:focus ~ label,
+.user-box textarea:valid ~ label {
+    top: -20px;
+    color: #03e9f4;
+    font-size: 18px;
+}
+.login-box button {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    background: #03e9f4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.login-box button:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+}
+.login-box button:hover:before {
+    width: 400%;
+    height: 400%;
+}
+.login-box button:hover {
+    background: #05b1e8;
+}
+.user-box {
+    display: flex;
+    align-items: center;
+}
+.user-box textarea {
+    height: auto; 
+}
+.user-box label {
+    top: -20px; 
+    font-size: 18px; 
+}
+.user-box select:focus ~ label,
+.user-box select:valid ~ label {
+
+    color: #03e9f4;
+    font-size: 20px;
+}
+.user-box textarea {
+    margin-top: 10px;
+    height: 80%; 
+}
+.user-box textarea + label {
+    
+    color: #03e9f4;
+}
+.user-box {
+    margin-right: 20px; 
+}
+.user-box input[type="radio"] {
+    margin-right: 8px; 
+    transform: scale(1.0); 
+}
+.user-box label {
+    margin-right: 10px; 
+}
+.user-box input[type="radio"]:checked + label {
+    color: #03e9f4; 
+}
+.user-box input[type="radio"] + label {
+    color: #fff; 
+}
+.login-box button:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4;
+}
+.gender-container {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    flex-direction: row;
+}
+.gender-label {
+    margin-bottom: auto;
+    flex-direction: row;
+    margin-right: 20px; 
+    color: #fff; 
+}
+.user-box {
+        margin-bottom: 30px;
+        position: relative;
+    }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="toggle-box">
+                <label for="loginTypeToggle">Register as a Mentee</label>
+                <input type="checkbox" id="loginTypeToggle">
+                <label class="slider" for="loginTypeToggle"></label>
+            </div>
+            <form id="mentorLoginForm" class="input-group">
+                <h2>Mentor Registration</h2>
+                <div class="user-box">
+                    <input type="text" class="input-field" placeholder="First Name" required>
+                    <label>First Name</label>
+                </div>
+                <div class="user-box">
+                    <input type="text" class="input-field" placeholder="Last Name" required>
+                    <label>Last Name</label>
+                </div>
+                <div class="user-box">
+                    <input type="email" class="input-field" placeholder="Email Address" required>
+                    <label>Email Address</label>
+                </div>
+                <div class="user-box">
+                    <input type="tel" class="input-field" placeholder="Phone Number" required>
+                    <label>Phone Number</label>
+                </div>
+                <div class="gender-container">
+                    <span class="gender-label">Gender:</span>
+                    <div class="user-box">
+                        <input type="radio" id="mentorGenderMale" name="mentorGender" value="male" required>
+                        <label for="mentorGenderMale">Male</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="radio" id="mentorGenderFemale" name="mentorGender" value="female">
+                        <label for="mentorGenderFemale">Female</label>
+                    </div>
+                </div>
+                <div class="user-box">
+                    <input type="text" class="input-field" placeholder="Job Title">
+                    <label> Job Title</label>
+                </div>
+                <div class="user-box">
+                    <input type="text" class="input-field" placeholder="Working Sector">
+                    <label>Sector</label>
+                </div>   
+                <div class="user-box">
+                    <select class="input-field" required>
+                        <option value="" disabled selected>Select Your Career Stage</option>
+                        <option value="junior">Junior (2-3 years' experience)</option>
+                        <option value="mid">Mid (3-8 years' experience)</option>
+                        <option value="senior">Senior (8+ years' experience)</option>
+                    </select>
+                    <label>Career Stage</label>
+                </div>
+                <div class="user-box">
+                    <textarea class="input-field" placeholder="Why are you interested in mentoring?"
+                        required></textarea>
+                    <label>Why are you interested in mentoring?</label>
+                </div>
+                <div class="user-box">
+                    <textarea class="input-field" placeholder="Professional Skills and Experience" required></textarea>
+                    <label>Professional Skills and Experience</label>
+                </div>
+                <div class="user-box">
+                    <textarea class="input-field" placeholder="Friendly Introduction for Your Mentee"
+                        required></textarea>
+                    <label>Friendly Introduction for Your Mentee</label>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+            <form id="menteeLoginForm" class="input-group" style="display:none;">
+                <h2>Mentee Registration</h2>
+                <div class="user-box">
+                    <input type="text" class="input-field" placeholder="First Name" required>
+                    <label>First Name</label>
+                </div>
+                <div class="user-box">
+                    <input type="text" class="input-field" placeholder="Last Name" required>
+                    <label>Last Name</label>
+                </div>
+                <div class="user-box">
+                    <input type="email" class="input-field" placeholder="Email Address" required>
+                    <label>Email Address</label>
+                </div>
+                <div class="user-box">
+                    <input type="tel" class="input-field" placeholder="Phone Number" required>
+                    <label>Phone Number</label>
+                </div>
+                <div class="gender-container">
+                    <span class="gender-label">Gender:</span>
+                    <div class="user-box">
+                        <input type="radio" id="menteeGenderMale" name="menteeGender" value="male" required>
+                        <label for="menteeGenderMale">Male</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="radio" id="menteeGenderFemale" name="menteeGender" value="female">
+                        <label for="menteeGenderFemale">Female</label>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const toggleSwitch = document.getElementById('loginTypeToggle');
+        const mentorForm = document.getElementById('mentorLoginForm');
+        const menteeForm = document.getElementById('menteeLoginForm');
+
+        toggleSwitch.addEventListener('change', function () {
+            if (toggleSwitch.checked) {
+                mentorForm.style.display = 'none';
+                menteeForm.style.display = 'block';
+            } else {
+                mentorForm.style.display = 'block';
+                menteeForm.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
