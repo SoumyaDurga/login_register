@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        "use strict";
+        !function () {
+            var t = window.driftt = window.drift = window.driftt || [];
+            if (!t.init) {
+                if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+                t.invoked = !0, t.methods = ["identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on"],
+                    t.factory = function (e) {
+                        return function () {
+                            var n = Array.prototype.slice.call(arguments);
+                            return n.unshift(e), t.push(n), t;
+                        };
+                    }, t.methods.forEach(function (e) {
+                        t[e] = t.factory(e);
+                    }), t.load = function (t) {
+                        var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+                        o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+                        var i = document.getElementsByTagName("script")[0];
+                        i.parentNode.insertBefore(o, i);
+                    };
+            }
+        }();
+        drift.SNIPPET_VERSION = '0.3.1';
+        drift.load('grr7ud8iehe9');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentor Profile</title>
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(130deg, #170963, #770b77);
+        }
+        .mentor-profile {
+            border: 1px solid #470ff1;
+            padding: 5%;
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease;
+            max-width: 60%;
+            font-size: 18px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-right: 220px;
+        }
+        .profile-details {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 10px;
+            justify-content: flex-end;
+        }
+        .details {
+            flex-grow: 2;
+            margin-top: 10px;
+            text-align: left;
+            margin-left: 20px;
+        }
+        .profile-details img {
+            border-radius: 50%;
+            margin-right: 15px;
+            width: 150px;
+            height: 150px;
+        }
+        .details h2 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .details p {
+            margin-bottom: 3px;
+            font-size: 18px;
+            color: #666;
+        }
+        .rating {
+            color: #f0ad4e;
+        }
+        .job-description {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #2213ed;
+        }
+        .actions {
+            display: flex;
+            margin-top: 20px;
+            margin-left: 10px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .btn-request {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-request:hover {
+            background-color: #0056b3;
+        }
+        #chat {
+            margin-left: 20px;
+        }
+        .scrolling-images {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 250px;
+            height: 100vh;
+            overflow-y: hidden;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            z-index: 999;
+        }
+        .scrolling-images img {
+            display: block;
+            margin-bottom: 10px;
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+        @media screen and (max-width: 1400px) {
+    .mentor-profile {
+        max-width: 90%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+    .profile-details {
+        justify-content: center;
+    }
+    .container {
+        margin-right: 0;
+    }
+    .scrolling-images {
+        display: none; 
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="mentor-profile">
+        <div class="profile-details">
+            <img src="images/mentor1.jpg" alt="Mentor Name">
+            <div class="details">
+                <h2>Mikasa Ackerman</h2>
+                <p class="rating">Rating: 4.98</p>
+                <p class="expertise">Expertise: Product Design (UX/UI)</p>
+                <div class="availability">
+                    <i class="fas fa-calendar"></i> <span>Availability</span>
+                </div>
+                <p>Location: Missouri,America</p>
+                <p>Languages: English, Spanish</p>
+                <p>Response Time: Usually responds in 18 hours</p>
+            </div>
+        </div>
+        <div class="job-description">
+            <p>Passionate UX/UI designer with a keen eye for detail, crafting seamless digital experiences that delight
+                users and drive engagement. Experienced in user-centric design methodologies, adept at translating
+                complex concepts into intuitive interfaces that elevate product usability and satisfaction.</p>
+        </div>
+        <div class="actions">
+            <button class="btn btn-request" id="request-call">Request a Call</button>
+            <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+            <div id="chat" class="elfsight-app-aa9b6f57-6177-4c0f-9612-571deec5b2d8" data-elfsight-app-lazy></div>
+        </div>
+    </div>
+    <div class="mentor-profile">
+        <div class="profile-details">
+            <img src="images/mentor2.jpg" alt="Another Mentor">
+            <div class="details">
+                <h2>Gojo Satoru</h2>
+                <p class="rating">Rating: 4.7</p>
+                <p class="expertise">Expertise: Web Development</p>
+                <div class="availability">
+                    <i class="fas fa-calendar"></i> <span>Availability</span>
+                </div>
+                <p>Location: Paris, France</p>
+                <p>Languages: English, French</p>
+                <p>Response Time: Usually responds in 24 hours</p>
+            </div>
+        </div>
+        <div class="job-description">
+            <p>Experienced web developer proficient in front-end and back-end technologies. Specializing in creating responsive and user-friendly websites that exceed client expectations.</p>
+        </div>
+        <div class="actions">
+            <button class="btn btn-request" id="request-call">Request a Call</button>
+            <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+            <div id="chat" class="elfsight-app-aa9b6f57-6177-4c0f-9612-571deec5b2d8" data-elfsight-app-lazy></div>
+        </div>
+    </div>
+    <div class="mentor-profile">
+        <div class="profile-details">
+            <img src="images/mentor3.jpg" alt="Yet Another Mentor">
+            <div class="details">
+                <h2>Nezuko Kamado</h2>
+                <p class="rating">Rating: 4.9</p>
+                <p class="expertise">Expertise: Data Science</p>
+                <div class="availability">
+                    <i class="fas fa-calendar"></i> <span>Availability</span>
+                </div>
+                <p>Location: Beijing, China</p>
+                <p>Languages: English, German</p>
+                <p>Response Time: Usually responds in 12 hours</p>
+            </div>
+        </div>
+        <div class="job-description">
+            <p>Experienced data scientist skilled in extracting insights from complex datasets. Specializing in machine learning, statistical analysis, and data visualization to drive informed decision-making and solve business challenges.</p>
+        </div>
+        <div class="actions">
+            <button class="btn btn-request" id="request-call">Request a Call</button>
+            <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+            <div id="chat" class="elfsight-app-aa9b6f57-6177-4c0f-9612-571deec5b2d8" data-elfsight-app-lazy></div>
+        </div>
+    </div>
+    <div class="mentor-profile">
+        <div class="profile-details">
+            <img src="images/mentor4.jpg" alt="New Mentor">
+            <div class="details">
+                <h2>Itachi Uchiha</h2>
+                <p class="rating">Rating: 4.7</p>
+                <p class="expertise">Expertise: Full Stack Development</p>
+                <div class="availability">
+                    <i class="fas fa-calendar"></i> <span>Availability</span>
+                </div>
+                <p>Location: Tokyo, Japan</p>
+                <p>Languages: English, Japanese</p>
+                <p>Response Time: Usually responds in 24 hours</p>
+            </div>
+        </div>
+        <div class="job-description">
+            <p>Seasoned full-stack developer adept at crafting scalable web applications, proficient in both front-end and back-end technologies. Experienced in leveraging a diverse set of frameworks and languages to deliver efficient and user-centric solutions.</p>
+        </div>
+        <div class="actions">
+            <button class="btn btn-request" id="request-call">Request a Call</button>
+            <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+            <div id="chat" class="elfsight-app-aa9b6f57-6177-4c0f-9612-571deec5b2d8" data-elfsight-app-lazy></div>
+        </div>
+    </div>
+    <div class="scrolling-images">
+        <marquee behavior="scroll" direction="up" style="height: 100vh;">
+            <img src="images/mentor1.jpg" alt="Image 1">
+            <img src="images/mentor2.jpg" alt="Image 2">
+            <img src="images/mentor4.jpg" alt="Image 2"> 
+            <img src="images/men.jpg" alt="Image 1">
+            <img src="images/men1.jpg" alt="Image 2">
+            <img src="images/men2.jpg" alt="Image 2"> 
+            <img src="images/men3.jpg" alt="img">
+            <img src="images/men4.jpg" alt="img">
+            <img src="images/men5.jpg" alt="img">
+            <img src="images/men6.jpg" alt="img">
+        </marquee>
+    </div>
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <script>
+        var requestCallButton = document.getElementById("request-call");
+        requestCallButton.addEventListener("click", function (event) {
+            event.preventDefault();
+            Calendly.initPopupWidget({
+                url: 'https://calendly.com/soumyadurga016',
+                prefill: {
+                    name: "Your Name Here" 
+                },
+                utm: {}
+            });
+        });
+    </script>
+</body>
+</html>
