@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e1e1e3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            gap: 20px;
+            /* Add gap between columns */
+        }
+
+        .content .column {
+            flex: 1;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content .column h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .content .column ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .content .column ul li {
+            padding: 5px 0;
+        }
+
+        .tick {
+            transition: transform 0.3s ease;
+        }
+
+        .tick:hover {
+            transform: scale(1.2);
+        }
+
+        .tick-text {
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .tick:hover+.tick-text {
+            transform: scale(1.1);
+        }
+
+        .image-box img {
+            transition: transform 0.3s ease;
+        }
+
+        .image-box:hover img {
+            transform: scale(1.1);
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .card {
+            flex-basis: calc(45% - 10px);
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgb(10, 10, 10);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .card em {
+            font-style: italic;
+            text-align: center;
+            display: block;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            transition: background-color 0.3s ease;
+        }
+
+        footer:hover {
+            background-color: #555;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .image-box {
+            width: calc(50% - 10px);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-box img {
+            width: 100%;
+            height: auto;
+        }
+
+        .tick {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #333;
+            border-radius: 50%;
+            margin-right: 10px;
+            position: relative;
+        }
+
+        .tick::before {
+            content: "\2713";
+            display: block;
+            text-align: center;
+            line-height: 20px;
+            font-size: 16px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        .image {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .image img {
+            max-width: 100%;
+            height: auto;
+        }
+        @media only screen and (max-width: 800px) {
+            .content {
+                flex-wrap: wrap;
+            }
+
+            .content .column {
+                flex: calc(50% - 10px);
+                margin-bottom: 20px;
+            }
+
+            .card {
+                flex-basis: 100%;
+            }
+
+            .image-container {
+                flex-wrap: wrap;
+            }
+
+            .image-box {
+                flex: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+    </header>
+    <div class="container">
+        <div class="content">
+            <div class="column">
+                <h2>Mentor Responsibilities</h2>
+                <ul>
+                    <li><span class="tick"></span><span>Provide guidance and support to mentees.</span></li>
+                    <li><span class="tick"></span><span>Share knowledge and expertise in relevant areas.</span></li>
+                    <li><span class="tick"></span><span>Help mentees set goals and develop plans to achieve them.</span>
+                    </li>
+                    <li><span class="tick"></span><span>Offer constructive feedback and encouragement.</span></li>
+                    <li><span class="tick"></span><span>Assist mentees in building professional networks.</span></li>
+                </ul>
+            </div>
+            <div class="column">
+                <h2>Mentee Responsibilities</h2>
+                <ul>
+                    <li><span class="tick"></span>Be open to learning and receiving feedback.</li>
+                    <li><span class="tick"></span>Take initiative in seeking guidance and advice.</li>
+                    <li><span class="tick"></span>Set clear goals and communicate them to the mentor.</li>
+                    <li><span class="tick"></span>Actively participate in mentoring sessions.</li>
+                    <li><span class="tick"></span>Show gratitude and respect towards the mentor.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="image-container">
+            <div class="image-box">
+                <img src="mentor_res.jpg" alt="Mentor Image">
+            </div>
+            <div class="image-box">
+                <img src="mentee_res.jpg" alt="Mentee Image">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h2>What Our Mentors and Mentees Say</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Mentorship Changed My Career</h3>
+                <p><em>"Thanks to my mentor, I was able to navigate through difficult career decisions and achieve my
+                        goals. Mentorship truly made a difference in my professional life."</em></p>
+            </div>
+            <div class="card">
+                <h3>Grateful for My Mentee Experience</h3>
+                <p><em>"Being a mentee has been an incredible journey. I've gained valuable insights, learned new
+                        skills, and expanded my network. I'm thankful for the guidance and support of my mentor."</em>
+                </p>
+            </div>
+            <div class="card">
+                <h3>Why I Love Being a Mentor</h3>
+                <p><em>"Being a mentor is not just about sharing knowledge, but also about making a positive impact on
+                        someone's life. It's incredibly rewarding to see my mentees grow and succeed."</em></p>
+            </div>
+            <div class="card">
+                <h3>Benefits of Having a Mentor</h3>
+                <p><em>"Having a mentor has helped me gain confidence, set clear goals, and stay motivated. I highly
+                        recommend mentorship to anyone looking to advance their career."</em></p>
+            </div>
+        </div>
+    </div>
+    <div class="image">
+        <img src="bg.jpg" alt="bg-image">
+    </div>
+    <footer>
+        <p>Copyright © 2024 Your Company. All rights reserved.</p>
+    </footer>
+</body>
+</html>
